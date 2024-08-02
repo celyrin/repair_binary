@@ -1,0 +1,15 @@
+Sample of using:
+Lets make signatures for delphi 2007 release run-time:
+
+dcu2pat.exe I:\delphi.trash\2007\lib\*.dcu
+wc -l .pat
+  26959 .pat
+\ida\flair\bin\sigmake.exe .pat d2007.sig
+  : modules/leaves: 11149849/26655, COLLISIONS: 19389
+
+After resolving of collisions (see flair\sigmake.txt for detail description):  
+wc -l d2007.exc
+  786 d2007.exc
+\ida\flair\bin\sigmake.exe .pat d2007.sig
+ls -l d2007.sig
+  -rw-rw-rw-   1                    1250330 May 04 15:30 d2007.sig
